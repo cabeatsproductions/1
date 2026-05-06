@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Contact C / A Beats Creator Upload Interface."
+  />
+
+  <title>Contact | C / A Beats Creator Upload Interface</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      background:
+      radial-gradient(circle at top left,
+      rgba(47,107,255,0.18) 0%,
+      transparent 28%),
+
+      radial-gradient(circle at bottom right,
+      rgba(70,130,255,0.14) 0%,
+      transparent 32%),
+
+      linear-gradient(
+      180deg,
+      #060B14 0%,
+      #0A1020 45%,
+      #060B14 100%);
+
+      color:#EAF1FF;
+
+      font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+      line-height:1.6;
+
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .container{
+      width:100%;
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      background:
+      rgba(8,14,26,0.84);
+
+      backdrop-filter:blur(14px);
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.05);
+
+      box-shadow:
+      0 4px 30px rgba(0,0,0,0.22);
+    }
+
+    .navbar-inner{
+      height:84px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+
+      width:56px;
+      height:56px;
+
+      object-fit:contain;
+
+      border-radius:16px;
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(20,30,55,1) 0%,
+      rgba(10,16,32,1) 100%);
+
+      border:
+      1px solid rgba(255,255,255,0.08);
+
+      padding:6px;
+
+      box-shadow:
+      0 0 14px rgba(30,94,255,0.35),
+      0 0 34px rgba(30,94,255,0.18);
+
+      transition:0.25s ease;
+    }
+
+    .brand img:hover{
+
+      transform:
+      scale(1.04);
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.48),
+      0 0 46px rgba(30,94,255,0.26);
+    }
+
+    .brand-text h1{
+      font-size:18px;
+      color:#FFFFFF;
+      font-weight:600;
+      letter-spacing:0.2px;
+    }
+
+    .brand-text p{
+      font-size:13px;
+      color:#8EA3C7;
+      margin-top:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#C7D4EC;
+      font-size:14px;
+      transition:0.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:#5DBBFF;
+    }
+
+    .nav-button{
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      color:white !important;
+
+      padding:11px 18px;
+
+      border-radius:14px;
+
+      font-size:14px;
+      font-weight:600;
+
+      box-shadow:
+      0 0 28px rgba(30,94,255,0.30);
+
+      transition:0.25s ease;
+    }
+
+    .nav-button:hover{
+
+      transform:
+      translateY(-2px);
+
+      box-shadow:
+      0 0 42px rgba(30,94,255,0.44);
+    }
+
+    /* HERO */
+
+    .hero{
+
+      position:relative;
+
+      padding:
+      120px 0 80px;
+    }
+
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      top:-260px;
+      right:-180px;
+
+      width:640px;
+      height:640px;
+
+      background:
+      radial-gradient(circle,
+      rgba(30,94,255,0.22) 0%,
+      rgba(30,94,255,0) 72%);
+
+      pointer-events:none;
+    }
+
+    .hero-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      1fr 0.95fr;
+
+      gap:54px;
+
+      align-items:center;
+    }
+
+    .hero-tag{
+
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      background:
+      rgba(47,107,255,0.10);
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      color:#8FB2FF;
+
+      font-size:13px;
+      font-weight:600;
+
+      margin-bottom:28px;
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.08);
+    }
+
+    .hero-content h2{
+
+      font-size:64px;
+
+      line-height:1.02;
+
+      letter-spacing:-1.8px;
+
+      color:#FFFFFF;
+
+      margin-bottom:28px;
+
+      max-width:720px;
+    }
+
+    .hero-content p{
+
+      color:#B7C6E2;
+
+      font-size:18px;
+
+      max-width:620px;
+
+      margin-bottom:34px;
+    }
+
+    .contact-glow-card{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(18,28,46,0.96) 0%,
+      rgba(8,14,26,0.98) 100%);
+
+      border:
+      1px solid rgba(255,255,255,0.06);
+
+      border-radius:30px;
+
+      padding:34px;
+
+      position:relative;
+
+      overflow:hidden;
+
+      box-shadow:
+      0 24px 90px rgba(0,0,0,0.34),
+      0 0 60px rgba(30,94,255,0.08);
+    }
+
+    .contact-glow-card::before{
+
+      content:"";
+
+      position:absolute;
+
+      top:-160px;
+      right:-140px;
+
+      width:380px;
+      height:380px;
+
+      background:
+      radial-gradient(circle,
+      rgba(70,130,255,0.22),
+      transparent 70%);
+    }
+
+    .contact-glow-card h3{
+      font-size:26px;
+      color:#FFFFFF;
+      margin-bottom:14px;
+    }
+
+    .contact-glow-card p{
+      color:#B7C6E2;
+      margin-bottom:22px;
+    }
+
+    .email-box{
+
+      background:
+      rgba(47,107,255,0.10);
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      border-radius:18px;
+
+      padding:18px;
+
+      margin-top:20px;
+
+      box-shadow:
+      0 0 30px rgba(30,94,255,0.08);
+    }
+
+    .email-box span{
+      display:block;
+      font-size:13px;
+      color:#8FB2FF;
+      margin-bottom:6px;
+    }
+
+    .email-box strong{
+      color:#FFFFFF;
+      font-size:18px;
+      letter-spacing:0.3px;
+    }
+
+    /* CONTACT SECTION */
+
+    .contact-section{
+      padding-bottom:100px;
+    }
+
+    .contact-wrapper{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(18,28,46,0.96),
+      rgba(8,14,26,0.98));
+
+      border:
+      1px solid rgba(255,255,255,0.05);
+
+      border-radius:32px;
+
+      padding:48px;
+
+      box-shadow:
+      0 0 50px rgba(30,94,255,0.06);
+    }
+
+    .contact-header{
+      margin-bottom:40px;
+    }
+
+    .contact-header h3{
+      font-size:38px;
+      color:#FFFFFF;
+      margin-bottom:14px;
+      letter-spacing:-0.8px;
+    }
+
+    .contact-header p{
+      color:#AAB8D1;
+      max-width:720px;
+    }
+
+    /* FORM */
+
+    .contact-form{
+      display:grid;
+      gap:22px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .form-group{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .form-group label{
+      margin-bottom:10px;
+      color:#DCE7FA;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+
+      background:
+      rgba(15,23,40,0.92);
+
+      border:
+      1px solid rgba(255,255,255,0.06);
+
+      border-radius:16px;
+
+      padding:16px 18px;
+
+      color:#EAF1FF;
+
+      font-size:15px;
+
+      outline:none;
+
+      transition:0.25s ease;
+    }
+
+    .form-group textarea{
+      min-height:180px;
+      resize:vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+
+      border-color:
+      rgba(47,107,255,0.40);
+
+      box-shadow:
+      0 0 26px rgba(30,94,255,0.12);
+    }
+
+    .submit-button{
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      border:none;
+
+      border-radius:18px;
+
+      padding:18px 28px;
+
+      color:#FFFFFF;
+
+      font-size:15px;
+      font-weight:700;
+
+      cursor:pointer;
+
+      transition:0.25s ease;
+
+      box-shadow:
+      0 0 34px rgba(30,94,255,0.26);
+    }
+
+    .submit-button:hover{
+
+      transform:
+      translateY(-2px);
+
+      box-shadow:
+      0 0 50px rgba(30,94,255,0.42);
+    }
+
+    .success-message{
+
+      display:none;
+
+      margin-top:24px;
+
+      background:
+      rgba(47,107,255,0.10);
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      color:#DDE7FF;
+
+      border-radius:18px;
+
+      padding:20px;
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      border-top:
+      1px solid rgba(255,255,255,0.05);
+
+      padding:38px 0;
+
+      background:
+      rgba(8,14,26,0.96);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .footer-inner p{
+      color:#8EA3C7;
+      font-size:14px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      color:#C7D4EC;
+      font-size:14px;
+      transition:0.2s ease;
+    }
+
+    .footer-links a:hover{
+      color:#5DBBFF;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:980px){
+
+      .hero-grid,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-content h2{
+        font-size:46px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:80px;
+      }
+    }
+
+    @media(max-width:640px){
+
+      .hero-content h2{
+        font-size:36px;
+      }
+
+      .hero-content p{
+        font-size:16px;
+      }
+
+      .contact-wrapper,
+      .contact-glow-card{
+        padding:26px;
+      }
+
+      .contact-header h3{
+        font-size:30px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="container navbar-inner">
+
+      <div class="brand">
+
+        <img src="assets/logo.png" alt="C / A Beats Logo">
+
+        <div class="brand-text">
+
+          <h1>C / A Beats Creator Upload Interface</h1>
+
+          <p>By C / A Beats & Productions</p>
+
+        </div>
+
+      </div>
+
+      <div class="nav-links">
+
+        <a href="index.html">About</a>
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+
+        <a href="terms.html">Terms</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="app.html" class="nav-button">
+          Open App
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          Creator Support & Platform Contact
+        </div>
+
+        <h2>
+          Let’s build creator infrastructure together
+        </h2>
+
+        <p>
+          Contact C / A Beats & Productions regarding creator support, platform access, artist onboarding, collaborations, and future creator-focused platform initiatives.
+        </p>
+
+      </div>
+
+      <!-- CONTACT CARD -->
+
+      <div class="contact-glow-card">
+
+        <h3>
+          Platform Contact
+        </h3>
+
+        <p>
+          Creator-focused communication hub for support, platform inquiries, onboarding, and future collaborations.
+        </p>
+
+        <div class="email-box">
+
+          <span>Email Contact</span>
+
+          <strong>
+            cabeatsproductions@gmail.com
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT FORM -->
+
+  <section class="contact-section">
+
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+        <div class="contact-header">
+
+          <h3>
+            Submit An Inquiry
+          </h3>
+
+          <p>
+            Messages submitted through this form are securely forwarded to the C / A Beats & Productions support workflow and creator onboarding system.
+          </p>
+
+        </div>
+
+        <!-- HIDDEN IFRAME -->
+
+        <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          style="display:none;">
+        </iframe>
+
+        <!-- FORM -->
+
+        <form
+          class="contact-form"
+
+          action="https://docs.google.com/forms/d/e/1FAIpQLSecTyKHen9rkBGl1PhyMfI7Bl1rra6oZ6fHQ-VSr_3-A8EFxQ/formResponse"
+
+          method="POST"
+
+          target="hidden_iframe"
+
+          id="contactForm">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+
+              <label>
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                name="entry.1882320175"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label>
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                name="entry.979584789"
+                required>
+
+            </div>
+
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+
+              <label>
+                Subject
+              </label>
+
+              <input
+                type="text"
+                name="entry.1427532083"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label>
+                Inquiry Type
+              </label>
+
+              <select
+                name="entry.1024042078"
+                required>
+
+                <option value="">
+                  Select inquiry type
+                </option>
+
+                <option value="Creator">
+                  Creator
+                </option>
+
+                <option value="Artist">
+                  Artist
+                </option>
+
+                <option value="Partnership">
+                  Partnership
+                </option>
+
+                <option value="Support">
+                  Support
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              Message
+            </label>
+
+            <textarea
+              name="entry.2042131830"
+              required></textarea>
+
+          </div>
+
+          <button
+            type="submit"
+            class="submit-button">
+
+            Submit Inquiry
+
+          </button>
+
+          <div
+            class="success-message"
+            id="successMessage">
+
+            Your inquiry has been submitted successfully.
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2025 C / A Beats & Productions
+      </p>
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          About
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- FORM SUCCESS -->
+
+  <script>
+
+    const form =
+    document.getElementById("contactForm");
+
+    const successMessage =
+    document.getElementById("successMessage");
+
+    form.addEventListener("submit", () => {
+
+      setTimeout(() => {
+
+        successMessage.style.display = "block";
+
+        form.reset();
+
+      }, 1200);
+
+    });
+
+  </script>
+
+</body>
+</html>
