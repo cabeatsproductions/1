@@ -1,146 +1,572 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Historien Bakom Musiken – Projekt & Autentisering</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  color: #FFFFFF;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.7;
-}
+  <!-- GitHub Pages rebuild trigger -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="C A Beats Creator Upload Interface - Creator-focused TikTok upload interface using TikTok official systems."
+  />
 
-header {
-  padding: 60px 20px 40px;
-  text-align: center;
-  background: #111;
-  border-bottom: 1px solid #F5B04133;
-  box-shadow: 0 0 15px rgba(245,176,65,0.15);
-}
+  <title>C A Beats Creator Upload Interface</title>
 
-header img {
-  width: 180px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-h1 {
-  color: #F5B041;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
+    body {
+      background-color: #0b1220;
+      color: #eaf1ff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
 
-h2 {
-  color: #F5B041;
-  font-weight: 700;
-  margin-top: 50px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-p {
-  max-width: 800px;
-  margin: 10px auto;
-  padding: 0 20px;
-  color: #E0E0E0;
-}
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-a {
-  color: #F5B041;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+    /* NAVBAR */
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: #111;
-  padding: 40px 30px;
-  border-radius: 10px;
-  border: 1px solid #F5B04122;
-  box-shadow: 0 0 15px rgba(245,176,65,0.1);
-  margin-top: 40px;
-}
+    .navbar {
+      border-bottom: 1px solid #22324d;
+      background-color: #0f1728;
+    }
 
-footer {
-  margin-top: 60px;
-  padding: 30px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #B4B4B4;
-  border-top: 1px solid #333;
-}
-</style>
+    .navbar-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .brand-text p {
+      font-size: 13px;
+      color: #8ea3c7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: #c7d4ec;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2f6bff;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h2 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #ffffff;
+      max-width: 720px;
+    }
+
+    .hero-content p {
+      color: #b7c6e2;
+      font-size: 18px;
+      max-width: 640px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn {
+      background-color: #2f6bff;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .primary-btn:hover {
+      background-color: #4f82ff;
+    }
+
+    .secondary-btn {
+      border: 1px solid #22324d;
+      color: #d8e3f8;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .secondary-btn:hover {
+      border-color: #2f6bff;
+      color: #ffffff;
+    }
+
+    /* CARD */
+
+    .hero-card {
+      background: linear-gradient(
+        180deg,
+        rgba(18, 28, 46, 1) 0%,
+        rgba(13, 21, 36, 1) 100%
+      );
+
+      border: 1px solid #22324d;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 26px;
+    }
+
+    .hero-card-header h3 {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .status {
+      background-color: rgba(47, 107, 255, 0.15);
+      color: #79a1ff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .card-section {
+      background-color: #0f1728;
+      border: 1px solid #1d2c46;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .card-section h4 {
+      font-size: 14px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .card-section p {
+      color: #9fb0cf;
+      font-size: 14px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      padding: 30px 0 90px;
+    }
+
+    .section-title {
+      margin-bottom: 42px;
+    }
+
+    .section-title h3 {
+      font-size: 34px;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .section-title p {
+      color: #aab8d1;
+      max-width: 720px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      background-color: #121c2e;
+      border: 1px solid #22324d;
+      border-radius: 20px;
+      padding: 28px;
+      transition: 0.2s ease;
+    }
+
+    .feature-card:hover {
+      border-color: #2f6bff;
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background-color: rgba(47, 107, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
+    .feature-card h4 {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #9fb0cf;
+      font-size: 14px;
+    }
+
+    /* INFO */
+
+    .info-section {
+      padding-bottom: 90px;
+    }
+
+    .info-box {
+      background-color: #121c2e;
+      border: 1px solid #22324d;
+      border-radius: 24px;
+      padding: 36px;
+    }
+
+    .info-box h3 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .info-box p {
+      color: #b7c6e2;
+      margin-bottom: 18px;
+    }
+
+    .info-list {
+      margin-top: 24px;
+      padding-left: 18px;
+    }
+
+    .info-list li {
+      margin-bottom: 12px;
+      color: #d6e1f5;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #22324d;
+      padding: 32px 0;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      color: #8ea3c7;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #c7d4ec;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #2f6bff;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h2 {
+        font-size: 42px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero-content h2 {
+        font-size: 34px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .info-box,
+      .feature-card,
+      .hero-card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <img src="https://raw.githubusercontent.com/caspergrenander/meta-policy/main/historien-bakom-musiken-logo.png" 
-       alt="Historien Bakom Musiken Logo">
-  <h1>Historien Bakom Musiken</h1>
-  <p>Ett kreativt projekt av Casper Grenander</p>
-</header>
+  <!-- NAVIGATION -->
 
-<div class="container">
-  <h2>Om Projektet</h2>
-  <p>
-    <strong>Historien Bakom Musiken</strong> är ett creator-drivet projekt där jag, <strong>Casper Grenander</strong>, 
-    utforskar och delar berättelser, musikskapande och bakgrundsarbetet bakom podden och musiken. 
-    Syftet är att ge insyn i det kreativa arbetet och skapa en plattform för inspiration och utveckling.
-  </p>
+  <nav class="navbar">
+    <div class="container navbar-inner">
 
-  <h2>Om AutoPublisher-verktyget</h2>
-  <p>
-    <em>Historien Bakom Musiken AutoPublisher</em> är ett internt verktyg jag byggt för att 
-    automatiskt publicera utvalda klipp från podden till mitt officiella TikTok-konto. 
-    Det använder TikToks <strong>Content Posting API</strong> för att schemalägga och hantera videouppladdningar.  
-    Verktyget är helt privat och används enbart av mig som utvecklare.
-  </p>
+      <div class="brand">
+        <img src="assets/logo.png" alt="C A Beats Logo" />
 
-  <h2>Autentisering via TikTok</h2>
-  <p>
-    För att möjliggöra säker uppladdning används TikToks officiella <strong>OAuth-autentisering</strong>.  
-    Den används enbart för att bekräfta min identitet som innehållsskapare och ge tillfällig åtkomst 
-    till mitt eget konto.  
-    Systemet begär följande behörigheter (scopes):
-  </p>
-  <ul style="max-width:800px;margin:auto;text-align:left;padding-left:40px;">
-    <li><code>user.info.basic</code> – verifierar TikTok-kontot</li>
-    <li><code>video.upload</code> – laddar upp videofiler</li>
-    <li><code>video.publish</code> – publicerar videor</li>
-  </ul>
+        <div class="brand-text">
+          <h1>C A Beats Creator Upload Interface</h1>
+          <p>By C A Beats & Productions</p>
+        </div>
+      </div>
 
-  <p>
-    Ingen information delas, lagras eller används utanför detta syfte.  
-    Alla anrop sker via TikToks säkra API enligt deras utvecklarpolicy.
-  </p>
+      <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="app.html">Open App</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
 
-  <h2>Policy & Information</h2>
-  <p>
-    För fullständig information om datahantering och användning, se:
-    <br><br>
-    🔗 <a href="https://caspergrenander.github.io/hbm-policy/integritetspolicy.html">Integritetspolicy</a><br>
-    🔗 <a href="https://caspergrenander.github.io/hbm-policy/anvandarvillkor.html">Användarvillkor</a>
-  </p>
+    </div>
+  </nav>
 
-  <h2>Kontakt</h2>
-  <p>
-    För frågor kring projektet, teknik eller policy:
-    <br>
-    📧 <a href="mailto:casper.grenander5@gmail.com">casper.grenander5@gmail.com</a>
-  </p>
-</div>
+  <!-- HERO -->
 
-<footer>
-  © 2025 Casper Grenander – Historien Bakom Musiken
-</footer>
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+
+        <h2>
+          Creator-focused TikTok upload interface
+        </h2>
+
+        <p>
+          C A Beats Creator Upload Interface allows creators to upload and publish their own TikTok content using TikTok official systems and user-controlled actions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="app.html" class="primary-btn">
+            Open Upload Interface
+          </a>
+
+          <a href="privacy-policy.html" class="secondary-btn">
+            View Privacy Policy
+          </a>
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="hero-card">
+
+        <div class="hero-card-header">
+          <h3>Platform Overview</h3>
+          <div class="status">User-Controlled</div>
+        </div>
+
+        <div class="card-section">
+          <h4>TikTok Authentication</h4>
+          <p>
+            Authentication occurs through TikTok OAuth and official TikTok systems.
+          </p>
+        </div>
+
+        <div class="card-section">
+          <h4>Manual Upload Actions</h4>
+          <p>
+            All uploads and publishing actions require direct user initiation and confirmation.
+          </p>
+        </div>
+
+        <div class="card-section">
+          <h4>Creator Visibility Settings</h4>
+          <p>
+            Users manually select privacy and interaction preferences before publishing content.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+    <div class="container">
+
+      <div class="section-title">
+        <h3>Platform Features</h3>
+
+        <p>
+          The platform is designed as a simple creator interface focused on transparency, creator control, and TikTok official integration workflows.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+
+          <h4>Official TikTok Login</h4>
+
+          <p>
+            Users authenticate through TikTok official authorization systems.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📹</div>
+
+          <h4>Video Upload</h4>
+
+          <p>
+            Upload video content directly through a creator-controlled publishing interface.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+
+          <h4>Privacy Controls</h4>
+
+          <p>
+            Users select visibility and interaction preferences before publishing.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFO -->
+
+  <section class="info-section">
+    <div class="container">
+
+      <div class="info-box">
+
+        <h3>About The Project</h3>
+
+        <p>
+          C A Beats Creator Upload Interface is a creator-focused upload interface developed by C A Beats & Productions.
+        </p>
+
+        <p>
+          The platform is designed to allow creators to upload and publish their own TikTok content through official TikTok systems while maintaining direct control over publishing actions and content visibility settings.
+        </p>
+
+        <p>
+          The application does not perform automated posting, background publishing, or unattended content management actions.
+        </p>
+
+        <ul class="info-list">
+          <li>User authentication occurs through TikTok OAuth.</li>
+          <li>Publishing requires direct user interaction.</li>
+          <li>Users select visibility and interaction settings manually.</li>
+          <li>The platform operates using TikTok official systems.</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <p>
+        © 2025 C A Beats & Productions
+      </p>
+
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app.html">Open App</a>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
