@@ -104,6 +104,7 @@
     .nav-links{
       display:flex;
       gap:22px;
+      align-items:center;
     }
 
     .nav-links a{
@@ -114,6 +115,31 @@
 
     .nav-links a:hover{
       color:#5f97ff;
+    }
+
+    .nav-button{
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      color:white !important;
+
+      padding:10px 16px;
+
+      border-radius:12px;
+
+      font-weight:600;
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.25);
+    }
+
+    .nav-button:hover{
+      box-shadow:
+      0 0 34px rgba(30,94,255,0.35);
     }
 
     /* HERO */
@@ -284,6 +310,77 @@
       margin-bottom:0;
     }
 
+    /* CONTACT CARD */
+
+    .contact-card{
+
+      margin-top:24px;
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(22,34,56,0.92),
+      rgba(12,18,32,0.96)
+      );
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      border-radius:22px;
+
+      padding:28px;
+
+      box-shadow:
+      0 0 30px rgba(47,107,255,0.08);
+    }
+
+    .contact-card p{
+      margin-bottom:10px;
+    }
+
+    .contact-email{
+      color:#84a9ff;
+      font-weight:600;
+      word-break:break-word;
+    }
+
+    .contact-button{
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      margin-top:18px;
+
+      padding:12px 20px;
+
+      border-radius:12px;
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      color:white;
+
+      font-size:14px;
+      font-weight:600;
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.22);
+
+      transition:0.25s ease;
+    }
+
+    .contact-button:hover{
+
+      transform:translateY(-2px);
+
+      box-shadow:
+      0 0 36px rgba(30,94,255,0.34);
+    }
+
     /* FOOTER */
 
     footer{
@@ -375,7 +472,7 @@
 
       <div class="brand">
 
-        <img src="assets/logo.png" alt="C A Beats Logo" />
+        <img src="assets/logo.png" alt="C / A Beats Logo" />
 
         <div class="brand-text">
           <h1>C / A Beats Creator Upload Interface</h1>
@@ -389,6 +486,7 @@
         <a href="app.html">Open App</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms</a>
+        <a href="contact.html" class="nav-button">Contact</a>
       </div>
 
     </div>
@@ -594,16 +692,32 @@
           <h3>8. Contact</h3>
 
           <p>
-            For questions regarding this Privacy Policy or platform operations, users may contact:
+            For questions regarding this Privacy Policy, TikTok integrations, or platform operations, users may contact:
           </p>
 
-          <ul class="policy-list">
+          <div class="contact-card">
 
-            <li>C / A Beats & Productions</li>
+            <p>
+              <strong>C / A Beats & Productions</strong>
+            </p>
 
-            <li>Platform: C / A Beats Creator Upload Interface</li>
+            <p>
+              Platform:
+              C / A Beats Creator Upload Interface
+            </p>
 
-          </ul>
+            <p>
+              Email:
+              <span class="contact-email">
+                cabeatsproductions@gmail.com
+              </span>
+            </p>
+
+            <a href="contact.html" class="contact-button">
+              Open Contact Page
+            </a>
+
+          </div>
 
         </div>
 
@@ -626,6 +740,7 @@
       <div class="footer-links">
         <a href="index.html">About</a>
         <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
         <a href="app.html">Open App</a>
       </div>
 
