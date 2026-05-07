@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Data Deletion Policy for C / A Beats Creator Upload Interface."
+  />
+
+  <title>Data Deletion | C / A Beats Creator Upload Interface</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      background:
+      radial-gradient(circle at top right,
+      rgba(30,94,255,0.14) 0%,
+      transparent 30%),
+
+      radial-gradient(circle at bottom left,
+      rgba(60,120,255,0.08) 0%,
+      transparent 35%),
+
+      linear-gradient(
+      180deg,
+      #060B14 0%,
+      #0B1220 45%,
+      #060B14 100%);
+
+      color:#EAF1FF;
+
+      font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+      line-height:1.7;
+
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .container{
+      width:100%;
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      backdrop-filter:blur(16px);
+
+      background:
+      rgba(8,14,26,0.88);
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.05);
+
+      box-shadow:
+      0 4px 30px rgba(0,0,0,0.25);
+    }
+
+    .navbar-inner{
+
+      height:84px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+
+      width:56px;
+      height:56px;
+
+      object-fit:contain;
+
+      border-radius:16px;
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(20,30,55,1) 0%,
+      rgba(10,16,32,1) 100%);
+
+      border:
+      1px solid rgba(255,255,255,0.08);
+
+      padding:6px;
+
+      box-shadow:
+      0 0 16px rgba(30,94,255,0.32),
+      0 0 34px rgba(30,94,255,0.16);
+
+      transition:0.25s ease;
+    }
+
+    .brand img:hover{
+
+      transform:
+      translateY(-1px)
+      scale(1.03);
+
+      box-shadow:
+      0 0 22px rgba(30,94,255,0.42),
+      0 0 42px rgba(30,94,255,0.22);
+    }
+
+    .brand-text h1{
+      font-size:18px;
+      font-weight:600;
+      color:#FFFFFF;
+      letter-spacing:0.2px;
+    }
+
+    .brand-text p{
+      font-size:13px;
+      color:#8EA3C7;
+      margin-top:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#C7D4EC;
+      font-size:14px;
+      transition:0.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:#5DBBFF;
+    }
+
+    .nav-button{
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      color:white !important;
+
+      padding:11px 18px;
+
+      border-radius:14px;
+
+      font-size:14px;
+      font-weight:600;
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.28);
+
+      transition:0.25s ease;
+    }
+
+    .nav-button:hover{
+
+      transform:
+      translateY(-2px);
+
+      box-shadow:
+      0 0 34px rgba(30,94,255,0.42);
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      padding:110px 0 80px;
+    }
+
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      top:-240px;
+      right:-160px;
+
+      width:560px;
+      height:560px;
+
+      background:
+      radial-gradient(circle,
+      rgba(30,94,255,0.22) 0%,
+      rgba(30,94,255,0) 70%);
+
+      pointer-events:none;
+    }
+
+    .hero-box{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(18,28,46,1) 0%,
+      rgba(10,16,32,1) 100%);
+
+      border:
+      1px solid rgba(255,255,255,0.05);
+
+      border-radius:34px;
+
+      padding:70px;
+
+      position:relative;
+
+      overflow:hidden;
+
+      box-shadow:
+      0 24px 90px rgba(0,0,0,0.34),
+      0 0 60px rgba(30,94,255,0.08);
+    }
+
+    .hero-label{
+
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      background:
+      rgba(47,107,255,0.12);
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      color:#8FB2FF;
+
+      font-size:13px;
+      font-weight:600;
+
+      margin-bottom:30px;
+    }
+
+    .hero-box h2{
+
+      font-size:60px;
+
+      line-height:1.04;
+
+      color:#FFFFFF;
+
+      letter-spacing:-1.4px;
+
+      margin-bottom:24px;
+
+      max-width:760px;
+    }
+
+    .hero-box p{
+
+      color:#B7C6E2;
+
+      font-size:18px;
+
+      max-width:760px;
+    }
+
+    /* CONTENT */
+
+    .content-section{
+      padding-bottom:100px;
+    }
+
+    .content-wrapper{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(18,28,46,0.96),
+      rgba(10,16,32,0.98));
+
+      border:
+      1px solid rgba(255,255,255,0.05);
+
+      border-radius:32px;
+
+      padding:50px;
+
+      box-shadow:
+      0 0 40px rgba(30,94,255,0.06);
+    }
+
+    .content-block{
+
+      margin-bottom:44px;
+
+      padding-bottom:34px;
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.05);
+    }
+
+    .content-block:last-child{
+      border-bottom:none;
+      margin-bottom:0;
+      padding-bottom:0;
+    }
+
+    .content-block h3{
+
+      font-size:30px;
+
+      color:#FFFFFF;
+
+      margin-bottom:18px;
+    }
+
+    .content-block p{
+
+      color:#C3D2EC;
+
+      margin-bottom:16px;
+
+      font-size:15px;
+    }
+
+    .content-list{
+      margin-top:18px;
+      padding-left:22px;
+    }
+
+    .content-list li{
+      color:#DDE7FA;
+      margin-bottom:12px;
+    }
+
+    .highlight-box{
+
+      margin-top:24px;
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(47,107,255,0.12),
+      rgba(47,107,255,0.05));
+
+      border:
+      1px solid rgba(47,107,255,0.18);
+
+      border-radius:22px;
+
+      padding:28px;
+
+      box-shadow:
+      0 0 30px rgba(30,94,255,0.08);
+    }
+
+    .highlight-box h4{
+      color:#FFFFFF;
+      margin-bottom:14px;
+      font-size:20px;
+    }
+
+    .highlight-box p{
+      color:#D6E3FA;
+      margin-bottom:0;
+    }
+
+    .deletion-button{
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      margin-top:24px;
+
+      background:
+      linear-gradient(
+      180deg,
+      #2F6BFF 0%,
+      #1E5EFF 100%);
+
+      color:#FFFFFF;
+
+      padding:14px 24px;
+
+      border-radius:14px;
+
+      font-size:15px;
+      font-weight:600;
+
+      box-shadow:
+      0 0 28px rgba(30,94,255,0.22);
+
+      transition:0.25s ease;
+    }
+
+    .deletion-button:hover{
+
+      transform:
+      translateY(-2px);
+
+      box-shadow:
+      0 0 38px rgba(30,94,255,0.36);
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      border-top:
+      1px solid rgba(255,255,255,0.05);
+
+      padding:38px 0;
+
+      background:
+      rgba(10,16,32,0.96);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .footer-inner p{
+      color:#8EA3C7;
+      font-size:14px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      color:#C7D4EC;
+      font-size:14px;
+      transition:0.2s ease;
+    }
+
+    .footer-links a:hover{
+      color:#5DBBFF;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero-box{
+        padding:44px 32px;
+      }
+
+      .content-wrapper{
+        padding:38px 28px;
+      }
+
+      .hero-box h2{
+        font-size:42px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+    @media(max-width:640px){
+
+      .hero{
+        padding-top:70px;
+      }
+
+      .hero-box h2{
+        font-size:34px;
+      }
+
+      .hero-box p{
+        font-size:16px;
+      }
+
+      .content-block h3{
+        font-size:24px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="container navbar-inner">
+
+      <div class="brand">
+
+        <img src="assets/logo.png" alt="C / A Beats Logo">
+
+        <div class="brand-text">
+
+          <h1>C / A Beats Creator Upload Interface</h1>
+
+          <p>By C / A Beats & Productions</p>
+
+        </div>
+
+      </div>
+
+      <div class="nav-links">
+
+        <a href="about.html">About</a>
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+
+        <a href="terms.html">Terms</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="app.html" class="nav-button">
+          Open App
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-box">
+
+        <div class="hero-label">
+          User Rights & Data Removal
+        </div>
+
+        <h2>
+          Data Deletion Request
+        </h2>
+
+        <p>
+          C / A Beats Creator Upload Interface allows users to request deletion of creator-related operational data associated with platform usage and TikTok integration workflows.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+
+  <section class="content-section">
+
+    <div class="container">
+
+      <div class="content-wrapper">
+
+        <!-- SECTION -->
+
+        <div class="content-block">
+
+          <h3>
+            1. User Data Rights
+          </h3>
+
+          <p>
+            Users may request deletion of operational data associated with their use of C / A Beats Creator Upload Interface.
+          </p>
+
+          <p>
+            The platform is designed to support creator privacy, transparency, and user-controlled account management workflows.
+          </p>
+
+        </div>
+
+        <!-- SECTION -->
+
+        <div class="content-block">
+
+          <h3>
+            2. Data That May Be Removed
+          </h3>
+
+          <ul class="content-list">
+
+            <li>
+              Creator support requests
+            </li>
+
+            <li>
+              Contact form submissions
+            </li>
+
+            <li>
+              TikTok-related operational identifiers
+            </li>
+
+            <li>
+              Temporary publishing-related information
+            </li>
+
+            <li>
+              Internal creator workflow references
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- SECTION -->
+
+        <div class="content-block">
+
+          <h3>
+            3. Deletion Requests
+          </h3>
+
+          <p>
+            Users may request deletion of associated operational data by contacting C / A Beats & Productions through the official contact page.
+          </p>
+
+          <div class="highlight-box">
+
+            <h4>
+              Submit A Data Deletion Request
+            </h4>
+
+            <p>
+              Future platform systems may automate portions of the deletion workflow for creator support and operational management purposes.
+            </p>
+
+            <a href="contact.html" class="deletion-button">
+              Open Contact Page
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- SECTION -->
+
+        <div class="content-block">
+
+          <h3>
+            4. Processing Time
+          </h3>
+
+          <p>
+            Deletion requests are reviewed and processed within a reasonable operational timeframe depending on the nature of the request and associated platform records.
+          </p>
+
+        </div>
+
+        <!-- SECTION -->
+
+        <div class="content-block">
+
+          <h3>
+            5. TikTok Permissions
+          </h3>
+
+          <p>
+            Users may also revoke TikTok account permissions directly through TikTok account settings and official TikTok authorization management systems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2025 C / A Beats & Productions
+      </p>
+
+      <div class="footer-links">
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
