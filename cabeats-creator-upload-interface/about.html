@@ -361,7 +361,99 @@
       0 0 20px rgba(30,94,255,0.12);
     }
 
-    /* FOOTER */
+    /* HERO CARD */
+
+    .hero-card{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(18,28,46,1) 0%,
+      rgba(10,16,32,1) 100%);
+
+      border:
+      1px solid rgba(255,255,255,0.06);
+
+      border-radius:30px;
+
+      padding:34px;
+
+      box-shadow:
+      0 24px 80px rgba(0,0,0,0.35),
+      0 0 40px rgba(30,94,255,0.06);
+    }
+
+    .hero-card-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:28px;
+    }
+
+    .hero-card-header h3{
+      font-size:20px;
+      color:#FFFFFF;
+      font-weight:600;
+    }
+
+    .status{
+
+      background:
+      rgba(30,94,255,0.14);
+
+      color:#8FB2FF;
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      font-size:12px;
+      font-weight:700;
+
+      border:
+      1px solid rgba(30,94,255,0.18);
+    }
+
+    .card-section{
+
+      background:
+      rgba(15,23,40,0.92);
+
+      border:
+      1px solid rgba(255,255,255,0.05);
+
+      border-radius:18px;
+
+      padding:20px;
+
+      margin-bottom:16px;
+
+      transition:0.25s ease;
+    }
+
+    .card-section:hover{
+
+      border-color:
+      rgba(30,94,255,0.18);
+
+      box-shadow:
+      0 0 24px rgba(30,94,255,0.08);
+    }
+
+    .card-section:last-child{
+      margin-bottom:0;
+    }
+
+    .card-section h4{
+      font-size:15px;
+      color:#FFFFFF;
+      margin-bottom:10px;
+    }
+
+    .card-section p{
+      color:#9FB0CF;
+      font-size:14px;
+    }
 
     footer{
 
@@ -403,8 +495,6 @@
       color:#5DBBFF;
     }
 
-    /* MOBILE */
-
     @media(max-width:980px){
 
       .hero-grid{
@@ -432,6 +522,10 @@
 
       .hero-content p{
         font-size:16px;
+      }
+
+      .hero-card{
+        padding:24px;
       }
     }
 
@@ -468,6 +562,8 @@
         <a href="privacy-policy.html">Privacy Policy</a>
 
         <a href="terms.html">Terms</a>
+
+        <!-- NEW CONTACT BUTTON -->
 
         <a href="contact.html">Contact</a>
 
@@ -507,9 +603,61 @@
             Open Upload Interface
           </a>
 
-          <a href="contact.html" class="secondary-btn">
-            Contact Support
+          <a href="privacy-policy.html" class="secondary-btn">
+            Privacy Policy
           </a>
+
+          <!-- NEW CONTACT BUTTON -->
+
+          <a href="contact.html" class="secondary-btn">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- HERO CARD -->
+
+      <div class="hero-card">
+
+        <div class="hero-card-header">
+
+          <h3>Platform Overview</h3>
+
+          <div class="status">
+            User-Controlled
+          </div>
+
+        </div>
+
+        <div class="card-section">
+
+          <h4>TikTok Authentication</h4>
+
+          <p>
+            Authentication occurs through TikTok OAuth and official TikTok authorization systems.
+          </p>
+
+        </div>
+
+        <div class="card-section">
+
+          <h4>Manual Upload Actions</h4>
+
+          <p>
+            All publishing actions require direct user interaction and manual confirmation before content is uploaded.
+          </p>
+
+        </div>
+
+        <div class="card-section">
+
+          <h4>Creator Visibility Settings</h4>
+
+          <p>
+            Users manually select visibility, privacy, and interaction preferences before publishing content.
+          </p>
 
         </div>
 
@@ -538,6 +686,8 @@
         <a href="terms.html">
           Terms
         </a>
+
+        <!-- NEW CONTACT LINK -->
 
         <a href="contact.html">
           Contact
